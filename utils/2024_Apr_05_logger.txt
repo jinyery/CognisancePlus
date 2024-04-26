@@ -1,0 +1,3 @@
+24_Apr_05 19:41:31 : Start Logging 
+24_Apr_05 19:41:31 : ====== The Current Split is : test
+24_Apr_05 19:41:31 : =====> Load image info
