@@ -88,11 +88,11 @@ saving_opt:
   save_all: false
 
 clusting:
-  min_dist_multiple: 0.78
-  max_dist_multiple: 5.78
+  min_dist_multiple: 0.8
+  max_dist_multiple: 4.8
 
 denosing:
   min_size: 80
   num_layer: 2
-  start_depth: 12
+  start_depth: 8
   density_percentile: 12

@@ -2,6 +2,7 @@ import numpy as np
 import pickle as pkl
 import os.path as path
 from tempfile import mkdtemp
+from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import pairwise_distances as pair_dist
 
 CUR_DIR = path.abspath(path.dirname(__file__))
@@ -64,9 +65,8 @@ class CoarseLeadingForest:
         self.coarse_nodes: list[CoarseNode] = list()
         samples = np.array(samples, dtype=np.float32)
         if standardization:
-            mu = np.mean(samples, axis=0)
-            sigma = np.std(samples, axis=0)
-            samples = (samples - mu) / sigma
+            standardScaler = StandardScaler()
+            samples = standardScaler.fit_transform(samples)
         self.compute_leader(samples)
 
     def num_tree(self):
@@ -132,7 +132,7 @@ class CoarseLeadingForest:
         if self.min_dist is None or self.max_dist is None:
             base = 0
             for i in range(len(samples)):
-                top_k = np.sort(dist[i])[1:3]
+                top_k = np.sort(dist[i])[1:4]
                 base += np.mean(top_k)
             base /= len(samples)
             self.min_dist = base * self.min_dist_multiple

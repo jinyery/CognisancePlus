@@ -81,3 +81,9 @@ checkpoint_opt:
 
 saving_opt:
   save_all: false
+
+denosing:
+  min_size: 10
+  num_layer: 2
+  start_depth: 4
+  density_percentile: 2

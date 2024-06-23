@@ -97,6 +97,14 @@ def update(config, algo_config, args):
         config["saving_opt"]["save_all"] = True
     if args.denosing:
         config["training_opt"]["denosing"] = True
+    if args.rn:
+        if not config["clusting"]:
+            config["clusting"] = dict()
+        config["clusting"]["min_dist_multiple"]=args.rn
+    if args.rd:
+        if not config["clusting"]:
+            config["clusting"] = dict()
+        config["clusting"]["max_dist_multiple"]=args.rd
     return config
 
 

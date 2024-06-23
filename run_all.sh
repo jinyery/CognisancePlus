@@ -117,10 +117,10 @@ case $RANGE in
     python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/TADE --require_eval --train_type TADE --phase train --seed $SEED
     python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/RIDE --require_eval --train_type RIDE --phase train --seed $SEED
 
-    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_blsoftmax_TRD --require_eval --train_type multi_center_dual_triplet_randaug_blsoftmax --phase train --seed $SEED $DENOSING
-    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_logit_adj_TRD --require_eval --train_type multi_center_dual_triplet_randaug_logit_adj --phase train --seed $SEED $DENOSING
-    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_tade_TRD --require_eval --train_type train_multi_center_dual_triplet_tade --phase train --seed $SEED $DENOSING
-    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_ride_TRD --require_eval --train_type multi_center_dual_triplet_randaug_ride --phase train --seed $SEED $DENOSING
+    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_blsoftmax_TRD --require_eval --train_type multi_center_dual_triplet_randaug_blsoftmax --phase train --seed $SEED --denosing
+    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_logit_adj_TRD --require_eval --train_type multi_center_dual_triplet_randaug_logit_adj --phase train --seed $SEED --denosing
+    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_tade_TRD --require_eval --train_type train_multi_center_dual_triplet_tade --phase train --seed $SEED --denosing
+    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_ride_TRD --require_eval --train_type multi_center_dual_triplet_randaug_ride --phase train --seed $SEED --denosing
 
     python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_randaug --require_eval --train_type multi_center_dual_randaug --phase train --seed $SEED
     python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_randaug_denosing --require_eval --train_type multi_center_dual_randaug --phase train --seed $SEED --denosing
@@ -137,10 +137,10 @@ case $RANGE in
     python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/RIDE --require_eval --train_type RIDE --phase train --seed $SEED
     ;;
 "denosing_mine")
-    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_blsoftmax_TRD --require_eval --train_type multi_center_dual_triplet_randaug_blsoftmax --phase train --seed $SEED --denosing
-    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_logit_adj_TRD --require_eval --train_type multi_center_dual_triplet_randaug_logit_adj --phase train --seed $SEED --denosing
-    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_tade_TRD --require_eval --train_type train_multi_center_dual_triplet_tade --phase train --seed $SEED --denosing
-    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_ride_TRD --require_eval --train_type multi_center_dual_triplet_randaug_ride --phase train --seed $SEED --denosing
+    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_triplet_randaug_blsoftmax --require_eval --train_type multi_center_dual_triplet_randaug_blsoftmax --phase train --seed $SEED --denosing
+    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_triplet_randaug_logit_adj --require_eval --train_type multi_center_dual_triplet_randaug_logit_adj --phase train --seed $SEED --denosing
+    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_triplet_randaug_tade --require_eval --train_type multi_center_dual_triplet_randaug_tade --phase train --seed $SEED --denosing
+    python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_triplet_randaug_ride --require_eval --train_type multi_center_dual_triplet_randaug_ride --phase train --seed $SEED --denosing
 
     python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_randaug --require_eval --train_type multi_center_dual_randaug --phase train --seed $SEED
     python -u main.py --cfg config/$DATASET.yaml --output_dir $OUTPUT_DIR/multi_center_dual_randaug_denosing --require_eval --train_type multi_center_dual_randaug --phase train --seed $SEED --denosing

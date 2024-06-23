@@ -89,8 +89,8 @@ saving_opt:
   save_all: false
 
 clusting:
-  min_dist_multiple: 0.69
-  max_dist_multiple: 5.69
+  min_dist_multiple: 0.8
+  max_dist_multiple: 4.8
 
 denosing:
   min_size: 60

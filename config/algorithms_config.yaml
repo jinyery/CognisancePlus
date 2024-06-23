@@ -524,11 +524,12 @@ irm_dual:
 
 # multi center loss with dual env pipeline
 multi_center_dual:
+  rand_aug: True
   test_type: baseline
   sampler: DistributionSampler
   num_sampler: 2
   batch_split: True
-  num_epochs: 300
+  num_epochs: 100
   loss_type: CrossEntropy # BalancedSoftmax
   backbone_type: ResNext
   classifier_type: FC
@@ -536,11 +537,14 @@ multi_center_dual:
     {
       env_type: clf,
       sample_scale: 4.0,
-      update_steps: 1,
+      update_steps: 10,
       always_update: True,
-      update_milestones: [60, 80, 100, 120],
-      center_milestones: [0, 60, 80, 100, 120],
-      center_weights: [0.0, 0.005, 0.01, 0.05, 0.1],
+      update_milestones: [60, 80],
+      center_milestones: [0, 60, 80],
+      center_weights: [0.0, 0.001, 0.005],
+      # update_milestones: [60, 80, 100, 120],
+      # center_milestones: [0, 60, 80, 100, 120],
+      # center_weights: [0.0, 0.005, 0.01, 0.05, 0.1],
       triplet_loss: False,
       multi_type: 2,
     }
@@ -836,7 +840,7 @@ multi_center_dual_triplet_randaug:
   sampler: DistributionSampler # WeightedSampler / DistributionSampler
   num_sampler: 2
   batch_split: True
-  num_epochs: 300
+  num_epochs: 100
   loss_type: CrossEntropy
   backbone_type: ResNext
   classifier_type: FC
@@ -844,11 +848,14 @@ multi_center_dual_triplet_randaug:
     {
       env_type: clf,
       sample_scale: 4.0,
-      update_steps: 1,
+      update_steps: 10,
       always_update: True,
-      update_milestones: [60, 80, 100, 120],
-      center_milestones: [0, 60, 80, 100, 120],
-      center_weights: [0.0, 0.005, 0.01, 0.05, 0.1],
+      update_milestones: [60, 80],
+      center_milestones: [0, 60, 80],
+      center_weights: [0.0, 0.001, 0.005],
+      # update_milestones: [60, 80, 100, 120],
+      # center_milestones: [0, 60, 80, 100, 120],
+      # center_weights: [0.0, 0.005, 0.01, 0.05, 0.1],
       triplet_loss: True,
       multi_type: 2,
     }
@@ -929,12 +936,12 @@ multi_center_dual_triplet_randaug_tade:
   # env_type : correctness / inter / intra / inter_intra / simple_aug
 
 multi_center_dual_triplet_randaug_ride:
-  rand_aug: True
+  rand_aug: False
   test_type: baseline
   sampler: DistributionSampler # WeightedSampler / DistributionSampler
   num_sampler: 2
   batch_split: True
-  num_epochs: 300
+  num_epochs: 100
   loss_type: RIDE
   backbone_type: RIDE
   classifier_type: RIDE
@@ -944,11 +951,14 @@ multi_center_dual_triplet_randaug_ride:
     {
       env_type: clf,
       sample_scale: 4.0,
-      update_steps: 1,
+      update_steps: 10,
       always_update: True,
-      update_milestones: [60, 80, 100, 120],
-      center_milestones: [0, 60, 80, 100, 120],
-      center_weights: [0.0, 0.005, 0.01, 0.05, 0.1],
+      update_milestones: [60, 80],
+      center_milestones: [0, 60, 80],
+      center_weights: [0.0, 0.001, 0.005],
+      # update_milestones: [60, 80, 100, 120],
+      # center_milestones: [0, 60, 80, 100, 120],
+      # center_weights: [0.0, 0.005, 0.01, 0.05, 0.1],
       diversity_factor: -0.2,
       triplet_loss: True,
       multi_type: 2,

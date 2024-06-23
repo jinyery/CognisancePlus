@@ -64,6 +64,18 @@ if __name__ == "__main__":
         type=str,
         help="Name of TXT output for the logger.",
     )
+    parser.add_argument(
+        "--rn",
+        default=None,
+        type=float,
+        help="Radius of CoarseNode.",
+    )
+    parser.add_argument(
+        "--rd",
+        default=None,
+        type=float,
+        help="Radius of Computing Density.",
+    )
     # update config settings
     parser.add_argument("--lr", default=None, type=float, help="Learning Rate")
     parser.add_argument(
